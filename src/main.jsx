@@ -8,6 +8,7 @@ import Signup from "./auth/Signup.jsx";
 import Profile from "./pages/Profile.jsx";
 import Notifactions from "./pages/Notifactions.jsx";
 import Group from "./pages/Group.jsx";
+import ProtectedRoute from "./components/ProtectRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />,
+    element: (
+      <ProtectedRoute>
+        <App />
+      </ProtectedRoute>
+    ),
     children: [
       { index: true, element: <Profile /> },
       { path: "group", element: <Group /> },
