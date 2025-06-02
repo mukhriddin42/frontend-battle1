@@ -19,6 +19,7 @@ const Login = () => {
       try {
         const res = await api.get(`/${auth}`);
         setUserDetail(res.data);
+        localStorage.setItem("token", res.data.token);
       } catch (error) {
         console.error("Xatolik yuz berdi:", error);
         setError("Ma'lumot olishda xatolik yuz berdi");
