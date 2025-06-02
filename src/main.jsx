@@ -9,17 +9,16 @@ import Profile from "./pages/Profile.jsx";
 import Notifactions from "./pages/Notifactions.jsx";
 import Group from "./pages/Group.jsx";
 import ProtectedRoute from "./components/ProtectRoute.jsx";
+import Register from "./auth/Register.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
-    children: [
-      {
-        index: true,
-        element: <Signup />,
-      },
-    ],
+  },
+  {
+    path: "/register",
+    element: <Register />, // yoki Signup
   },
   {
     path: "/",
