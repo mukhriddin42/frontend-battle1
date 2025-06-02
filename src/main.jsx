@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Login from "./auth/Login.jsx";
-import Signup from "./auth/Signup.jsx";
+import Signup from "./auth/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Notifactions from "./pages/Notifactions.jsx";
 import Group from "./pages/Group.jsx";
