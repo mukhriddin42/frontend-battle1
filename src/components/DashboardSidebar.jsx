@@ -35,7 +35,7 @@ const DashboardSidebar = () => {
       </div>
       <div className={`${isBackdrop ? 'backdrop' : ''}`}></div>
       {showModal && (
-        <div className='modal border-1 bg-white rounded-xl p-4 relative'>
+        <div className='main-shadow modal bg-white rounded-xl p-4 relative'>
           <h1 className='text-center text-xl'>Add new Group</h1>
           <form className='p-2 text-center ' action="">
             <input className='block px-4 py-1 border-1 border-gray-400 focus:outline-3 focus:outline-[#27ae60] my-5 rounded-sm' type="text" placeholder='Group name' />

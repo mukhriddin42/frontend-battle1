@@ -26,7 +26,7 @@ const DashboardNavbar = () => {
                     <p className='text-xl'>uantum</p>
                 </NavLink>
                 <div>
-                    <input className='border-1 w-80 px-4 py-1 rounded-md' type="text" placeholder='Search' />
+                    <input className='border-1 w-80 px-4 py-1 rounded-md border-gray-400 focus:outline-3 focus:outline-[#27ae60]' type="text" placeholder='Search' />
                 </div>
             </div>
             <div className='flex items-center gap-6'>

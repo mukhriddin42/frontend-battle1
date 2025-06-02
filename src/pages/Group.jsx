@@ -23,7 +23,7 @@ const Group = () => {
                             <button className='bg-[#27ae60] hover:bg-[#27ae56e1] text-white px-3 py-1 rounded-md border-2 border-[#27ae60] cursor-pointer'><RiAddFill size={20} /></button>
                         </div>
                     </div>
-                    
+
                     {/* Item */}
                     <div className='flex mt-2 border-1 px-4 py-2 items-center justify-between rounded-md'>
                         <div>
@@ -58,6 +58,20 @@ const Group = () => {
                     <div className='flex justify-between py-3 border-b-1'>
                         <h1 className='text-xl font-medium'>Members: <span>2</span></h1>
                     </div>
+
+                    {/* Member */}
+                    <div className='flex mt-2 border-1 px-4 py-2 items-center justify-between rounded-md'>
+                        <div>
+                            <div className='flex'>
+                                <h1 className='text font-medium'>Full name</h1>
+                            </div>
+                            <p className='text-gray-500'>username12</p>
+                        </div>
+                        <div className='flex gap-2'>
+                            <button className='bg-[#eb5757] hover:bg-[#eb5757dd] px-4 py-2 rounded-md cursor-pointer'><MdDeleteForever size={22} color='white' /></button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
