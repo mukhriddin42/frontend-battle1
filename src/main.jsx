@@ -1,39 +1,39 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import Login from './auth/Login.jsx'
-import Signup from './auth/Signup.jsx'
-import Profile from './pages/Profile.jsx'
-import Notifactions from './pages/Notifactions.jsx'
-import Group from './pages/Group.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Login from "./auth/Login.jsx";
+import Signup from "./auth/Signup.jsx";
+import Profile from "./pages/Profile.jsx";
+import Notifactions from "./pages/Notifactions.jsx";
+import Group from "./pages/Group.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
     children: [
       {
         index: true,
-        element: <Signup/>
-      }
-    ]
+        element: <Signup />,
+      },
+    ],
   },
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
-      {index: true, element: <Profile/>},
-      {path: 'group', element: <Group/>},
-      {path: 'notifactions', element: <Notifactions/>},
-      {path: 'profile', element: <Profile/>}
-    ]
-  }
-])
+      { index: true, element: <Profile /> },
+      { path: "group", element: <Group /> },
+      { path: "notifactions", element: <Notifactions /> },
+      { path: "profile", element: <Profile /> },
+    ],
+  },
+]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}/>
-  </StrictMode>,
-)
+    <RouterProvider router={router} />
+  </StrictMode>
+);
