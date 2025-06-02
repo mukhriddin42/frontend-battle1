@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { api } from "../api/Api";
 
 const Login = () => {
@@ -9,7 +9,7 @@ const Login = () => {
   const [userDetail, setUserDetail] = useState(null);
   const [error, setError] = useState(null); // Xatolik uchun state
   const { auth } = useParams();
-
+  const navigate = useNavigate();
   // Agar URL parametri auth bo‘lsa, avtomatik ma’lumot olish uchun useEffect
   useEffect(() => {
     if (!auth) return;
@@ -19,7 +19,6 @@ const Login = () => {
       try {
         const res = await api.get(`/${auth}`);
         setUserDetail(res.data);
-        localStorage.setItem("token", res.data.token);
       } catch (error) {
         console.error("Xatolik yuz berdi:", error);
         setError("Ma'lumot olishda xatolik yuz berdi");
@@ -39,7 +38,9 @@ const Login = () => {
     try {
       const res = await api.post("/auth", { username, password });
       setUserDetail(res.data);
+      localStorage.setItem("token", res.data.token);
       console.log("Login muvaffaqiyatli:", res.data);
+      navigate("/");
     } catch (error) {
       console.error("Login xatolik:", error.response?.data || error.message);
       setError("Login muvaffaqiyatsiz, iltimos ma'lumotlarni tekshiring");
